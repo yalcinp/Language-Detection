@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 from own_char_ngram_nb import CharNgramNB, load_train
-
+from matplotlib.colors import LogNorm
 
 LABELS = ["en","de","fr","es","it","tr","nl","sv","pl","ru","ar","zh"]
 IDX = {l:i for i,l in enumerate(LABELS)}
@@ -20,19 +20,35 @@ def load_test(path: Path):
             rows.append((o["text"], o["lang"]))
     return rows
 
-def plot_confusion_matrix(gold, pred, labels, out_pdf: Path) -> None:
-    """Generate and save a normalized confusion matrix plot."""
-    cm = confusion_matrix(gold, pred, labels=labels)
-    cm_norm = cm.astype(float) / cm.sum(axis=1, keepdims=True)
+def plot_confusion_matrix(C: np.ndarray, labels, out_pdf: Path) -> None:
 
-    # tighter layout + square cells
+    """Generate and save a normalized confusion matrix plot."""
+    M = C.astype(float).copy()
+
+    # mask diagonal + zeros (so the plot shows only actual confusions)
+    np.fill_diagonal(M, np.nan)
+    M[M == 0] = np.nan
+
+    finite = M[np.isfinite(M)]
+    if finite.size == 0:
+        print("No off-diagonal errors; skipping confusion plot.")
+        return
+
+    vmin = max(1.0, float(np.nanmin(M)))
+    vmax = float(np.nanmax(M))
+
     fig, ax = plt.subplots(figsize=(5.8, 4.8), constrained_layout=True)
+
     im = ax.imshow(
-        cm_norm,
+        M,
         interpolation="nearest",
-        vmin=0.0, vmax=1.0,
-        aspect="equal",          
+        aspect="equal",
+        norm=LogNorm(vmin=vmin, vmax=vmax),
+        cmap="viridis",
     )
+    im.cmap.set_bad(color="white")
+
+    ax.set_title("Confusion matrix (NB)")
     ax.set_xlabel("Predicted label")
     ax.set_ylabel("True label")
 
@@ -41,21 +57,12 @@ def plot_confusion_matrix(gold, pred, labels, out_pdf: Path) -> None:
     ax.set_xticklabels(labels, rotation=45, ha="right")
     ax.set_yticklabels(labels)
 
-    # Compact colorbar
     cbar = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
-    cbar.ax.set_ylabel("Normalized frequency", rotation=90)
-
-    # annotate diagonal with contrast-aware color
-    threshold = 0.5
-    for i in range(len(labels)):
-        v = cm_norm[i, i]
-        text_color = "black" if v > threshold else "white"
-        ax.text(i, i, f"{v:.2f}", ha="center", va="center", color=text_color, fontsize=9)
+    cbar.ax.set_ylabel("Error count (log scale)", rotation=90)
 
     out_pdf.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_pdf, bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
-
     print("Saved confusion matrix:", out_pdf)
 
 
@@ -78,7 +85,7 @@ def main():
     for g, p in zip(gold, preds):
         C[IDX[g], IDX[p]] += 1
 
-    # per-language metrics
+    # per-language stats 
     metrics = {}
     for l in LABELS:
         i = IDX[l]
@@ -139,11 +146,11 @@ def main():
 
     # create pdf
     plot_confusion_matrix(
-        gold=gold,
-        pred=preds,
-        labels=LABELS,
-        out_pdf=Path("results/fig_confusion_matrix_nb.pdf"),
-    ) 
+    C=C,
+    labels=LABELS,
+    out_pdf=Path("results/fig_confusion_matrix_nb.pdf"),
+)
+
 
     
 if __name__ == "__main__":
