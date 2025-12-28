@@ -38,13 +38,13 @@ All experiments and analyses can be reproduced with a single command:
 bash run.sh
 ```
 
-## Implemented analyses:
+## Implemented Analyses
 
-Character n-gram Naive Bayes with 1–5 grams
-Baselines: langid.py and fastText
-Preprocessing ablation
-Whitespace ablation
-Short-text robustness evaluation
-Selective prediction via margin-based abstention
-Coverage–risk curves
+Character n-gram Naive Bayes (1–5 grams)  
+Baselines: langid.py and fastText  
+Preprocessing ablation  
+Whitespace ablation  
+Short-text robustness evaluation  
+Selective prediction via margin-based abstention  
+Coverage–risk curves  
 N-gram-level interpretability analysis
