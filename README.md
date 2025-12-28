@@ -17,32 +17,6 @@ en, de, fr, es, it, tr, nl, sv, pl, ru, ar, zh
 
 All data splits are balanced across languages.
 
----
-
-## Repository Structure
-
-.
-├── src/
-│ ├── own_char_ngram_nb.py
-│ ├── prepare_data.py
-│ ├── data_summary.py
-│ ├── evaluate.py
-│ ├── run_all_ablations.py
-│ ├── eval_preproc_ablation.py
-│ ├── eval_space_ablation.py
-│ ├── eval_short_text_robustness_all.py
-│ ├── eval_coverage_risk_all.py
-│ ├── eval_abstain_nb.py
-│ ├── inspect_nb_ngrams.py
-│ ├── baseline_langid.py
-│ └── baseline_fasttext.py
-│
-├── results/
-├── run.sh
-├── requirements.txt
-└── README.md
-
-
 
 ---
 
