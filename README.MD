@@ -49,14 +49,6 @@ Selective prediction via margin-based abstention
 Coverage–risk curves  
 N-gram-level interpretability analysis
 
-## FastText Model (`lid.176.bin`)
+## FastText Model 
 
-A pre-trained FastText language identification model is included as `lid.176.bin`. To use it:
-
-```python
-import fasttext
-
-model = fasttext.load_model('lid.176.bin')
-prediction = model.predict("Your text here")
-print(prediction)
-```
+A pre-trained FastText language identification model is available on  ([HuggingFace](https://huggingface.co/julien-c/fasttext-language-id/tree/0266da4549434de56667387618bc67dc6d2670ef)) and can be locate under **'models'** folder in root folder.
