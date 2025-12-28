@@ -34,7 +34,9 @@ pip install -r requirements.txt
 ## Reproducing All Experiments
 
 All experiments and analyses can be reproduced with a single command: 
+```bash
 bash run.sh
+```
 
 ## Implemented analyses:
 
