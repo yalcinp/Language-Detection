@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import List, Tuple, Dict
 import matplotlib.pyplot as plt
 from own_char_ngram_nb import CharNgramNB, load_train
-from py3langid import langid
+import langid
 import fasttext
 
 

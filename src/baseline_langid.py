@@ -1,8 +1,7 @@
 from __future__ import annotations
 from pathlib import Path
 from typing import List
-
-from py3langid import langid
+import langid
 from evaluate import evaluate
 
 

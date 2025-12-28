@@ -1,5 +1,6 @@
-numpy
-scikit-learn
-fasttext-wheel
-py3langid
-matplotlib
+fasttext==0.9.3
+matplotlib==3.10.8
+numpy>=1.26,<2
+scikit-learn==1.8.0
+datasets==4.4.2
+langid==1.1.6

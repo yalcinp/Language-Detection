@@ -1,14 +1,11 @@
 from __future__ import annotations
-
 import json
 from pathlib import Path
 from typing import List, Tuple, Dict, Optional
-
 import numpy as np
 import matplotlib.pyplot as plt
-
 from own_char_ngram_nb import CharNgramNB
-from py3langid import langid
+import langid
 import fasttext
 
 

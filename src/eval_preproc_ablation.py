@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import fasttext
 from pathlib import Path
 from typing import Dict, List, Tuple
-from py3langid import langid
+import langid
 from evaluate import evaluate
 from own_char_ngram_nb import CharNgramNB, load_train
 
