@@ -1,0 +1,99 @@
+{
+  "name": "NB interpretability: most confident wrong (ngram-normalized margin)",
+  "index": 5035,
+  "gold": "de",
+  "pred": "pl",
+  "runner_up": "it",
+  "margin_raw": 1218.0576922740875,
+  "margin_norm_ngram": 1.3239757524718343,
+  "text_snippet": "magdalena semczyszyn: wybory w kurii miejskiej we lwowie 1861–1914 jako pretekst dla ukazania społeczno-politycznego potencjału miasta. in: historia slavorum occidentis 1(4), 43-71, 2013",
+  "prior_delta": 0.0,
+  "top_contributions": [
+    {
+      "ngram": "iej",
+      "count_in_doc": 2,
+      "per_occ_delta": 8.238618000781232,
+      "total_delta": 16.477236001562463,
+      "cnt_in_c1": 343,
+      "cnt_in_c2": 0
+    },
+    {
+      "ngram": "czn",
+      "count_in_doc": 2,
+      "per_occ_delta": 8.042857668924778,
+      "total_delta": 16.085715337849557,
+      "cnt_in_c1": 282,
+      "cnt_in_c2": 0
+    },
+    {
+      "ngram": "w",
+      "count_in_doc": 5,
+      "per_occ_delta": 3.002982803140595,
+      "total_delta": 15.014914015702976,
+      "cnt_in_c1": 6851,
+      "cnt_in_c2": 375
+    },
+    {
+      "ngram": "ł",
+      "count_in_doc": 2,
+      "per_occ_delta": 7.185345943021278,
+      "total_delta": 14.370691886042556,
+      "cnt_in_c1": 2513,
+      "cnt_in_c2": 2
+    },
+    {
+      "ngram": "j",
+      "count_in_doc": 4,
+      "per_occ_delta": 3.1665486199891273,
+      "total_delta": 12.66619447995651,
+      "cnt_in_c1": 2992,
+      "cnt_in_c2": 139
+    },
+    {
+      "ngram": "cz",
+      "count_in_doc": 3,
+      "per_occ_delta": 4.196747017789556,
+      "total_delta": 12.590241053368668,
+      "cnt_in_c1": 1392,
+      "cnt_in_c2": 23
+    },
+    {
+      "ngram": "y",
+      "count_in_doc": 5,
+      "per_occ_delta": 2.5042481280657825,
+      "total_delta": 12.521240640328912,
+      "cnt_in_c1": 4815,
+      "cnt_in_c2": 434
+    },
+    {
+      "ngram": "zn",
+      "count_in_doc": 2,
+      "per_occ_delta": 6.094236878950654,
+      "total_delta": 12.188473757901308,
+      "cnt_in_c1": 442,
+      "cnt_in_c2": 1
+    },
+    {
+      "ngram": "zy",
+      "count_in_doc": 2,
+      "per_occ_delta": 5.764660860321856,
+      "total_delta": 11.529321720643711,
+      "cnt_in_c1": 896,
+      "cnt_in_c2": 3
+    },
+    {
+      "ngram": "k",
+      "count_in_doc": 5,
+      "per_occ_delta": 2.259565839558597,
+      "total_delta": 11.297829197792986,
+      "cnt_in_c1": 4786,
+      "cnt_in_c2": 551
+    }
+  ],
+  "note": "top_contributions sorted by |total_delta| for margin=score(pred)-score(runner_up)",
+  "model": {
+    "n_min": 1,
+    "n_max": 5,
+    "alpha": 0.1
+  }
+}

@@ -5,24 +5,19 @@ import math
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-from own_char_ngram_nb import CharNgramNB, load_train
+from own_char_ngram_nb import CharNgramNB
 
 
 LABELS = ["en","de","fr","es","it","tr","nl","sv","pl","ru","ar","zh"]
 
 
 def load_jsonl(path: Path) -> List[Tuple[str, str]]:
-    rows = []
+    rows: List[Tuple[str, str]] = []
     with path.open("r", encoding="utf-8") as f:
         for line in f:
-            o = json.loads(line)
-            rows.append((o["text"], o["lang"]))
+            obj = json.loads(line)
+            rows.append((obj["text"], obj["lang"]))
     return rows
-
-
-def norm(t: str) -> str:
-    # match model normalization
-    return " ".join(t.lower().split())
 
 
 def ngrams_count(s: str, n_min: int, n_max: int) -> int:
@@ -34,19 +29,20 @@ def ngrams_count(s: str, n_min: int, n_max: int) -> int:
 
 
 def log_posteriors(model: CharNgramNB, text: str) -> Dict[str, float]:
-    """
-    Recompute log-posterior scores exactly as in predict_one/predict_with_scores.
-    """
-    ngrams = model._extract_ngrams(text)  # uses model normalization internally
+    """Manually re-calculate scores to inspect the process."""
+    text_n = model.normalize(text)
+    ngrams = model.extract_ngrams(text_n)
     V = len(model.vocab)
     total_docs = sum(model.class_counts.values())
     scores: Dict[str, float] = {}
 
     for c in model.labels:
-        logp = math.log(model.class_counts[c] / total_docs)  # log prior
+        # log P(c)
+        logp = math.log(model.class_counts[c] / total_docs)  
         denom = model.total_ngrams[c] + model.alpha * V
         counts_c = model.ngram_counts[c]
-        for ng in ngrams:
+        # Likelihoods
+        for ng in ngrams:   
             cnt = counts_c.get(ng, 0)
             logp += math.log((cnt + model.alpha) / denom)
         scores[c] = logp
@@ -61,15 +57,10 @@ def top_ngram_contributions(
     c2: str,
     topk: int = 10,
 ) -> Dict:
-    """
-    Contribution of each n-gram to margin = score(c1) - score(c2).
+    """Find which n-grams push the margin between top two classes."""
+    text_n = model.normalize(text)
+    ngrams = model.extract_ngrams(text_n)
 
-    margin = (log prior c1 - log prior c2) + sum_ng count(ng in doc) * [
-        log((cnt_c1+alpha)/denom_c1) - log((cnt_c2+alpha)/denom_c2)
-    ]
-    """
-    # get doc ngrams + counts
-    ngrams = model._extract_ngrams(text)
     doc_counts: Dict[str, int] = {}
     for ng in ngrams:
         doc_counts[ng] = doc_counts.get(ng, 0) + 1
@@ -77,7 +68,6 @@ def top_ngram_contributions(
     V = len(model.vocab)
     total_docs = sum(model.class_counts.values())
 
-    # prior contribution
     prior_c1 = math.log(model.class_counts[c1] / total_docs)
     prior_c2 = math.log(model.class_counts[c2] / total_docs)
     prior_delta = prior_c1 - prior_c2
@@ -109,7 +99,6 @@ def top_ngram_contributions(
             }
         )
 
-    # sort by absolute effect on margin (most influential)
     contribs.sort(key=lambda d: abs(d["total_delta"]), reverse=True)
     top = contribs[:topk]
 
@@ -119,22 +108,87 @@ def top_ngram_contributions(
     }
 
 
+def export_ngram_inspection_json(
+    model: CharNgramNB,
+    n: int = 3,
+    topk: int = 20,
+    out_path: Path = Path("results/ngram_inspection.json"),
+) -> None:
+    """Check which n-grams are most unique to each class."""
+    V = len(model.vocab)
+    total_all = sum(model.total_ngrams[c] for c in model.labels)
+
+    # global counts for specific n-gram length
+    counts_all: Dict[str, int] = {}
+    for c in model.labels:
+        for ng, cnt in model.ngram_counts[c].items():
+            if len(ng) == n:
+                counts_all[ng] = counts_all.get(ng, 0) + cnt
+
+    result: Dict[str, object] = {
+        "name": f"NB global n-gram inspection (n={n})",
+        "n": int(n),
+        "topk": int(topk),
+        "alpha": float(model.alpha),
+        "labels": list(model.labels),
+        "method": "log_odds(log P(ng|c) - log P(ng|not c))",
+        "top_ngrams": {},
+    }
+
+    top_ngrams: Dict[str, List[Dict[str, object]]] = {}
+
+    for c in model.labels:
+        denom_c = model.total_ngrams[c] + model.alpha * V
+        denom_notc = (total_all - model.total_ngrams[c]) + model.alpha * V
+        counts_c = model.ngram_counts[c]
+
+        scored: List[Dict[str, object]] = []
+        for ng, cnt_all in counts_all.items():
+            cnt_c = counts_c.get(ng, 0)
+            cnt_notc = cnt_all - cnt_c
+
+            logp_c = math.log((cnt_c + model.alpha) / denom_c)
+            logp_notc = math.log((cnt_notc + model.alpha) / denom_notc)
+
+            scored.append(
+                {
+                    "ngram": ng,
+                    "log_odds": float(logp_c - logp_notc),
+                    "count_in_class": int(cnt_c),
+                    "count_outside": int(cnt_notc),
+                }
+            )
+
+        scored.sort(key=lambda d: d["log_odds"], reverse=True)
+        top_ngrams[c] = scored[:topk]
+
+    result["top_ngrams"] = top_ngrams
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def main() -> None:
     train_path = Path("data/train.jsonl")
     test_path = Path("data/test.jsonl")
-    out_path = Path("results/nb_interpretability_example.json")
 
-    # train NB
-    train = load_train(train_path)
-    model = CharNgramNB(n_min=1, n_max=5, alpha=0.1)  # <- your stated model: 3–5 grams
+    out_example = Path("results/nb_interpretability_example.json")
+    out_inspect = Path("results/ngram_inspection.json")
+
+    # Train NB
+    train = load_jsonl(train_path)
+    model = CharNgramNB(n_min=1, n_max=5, alpha=0.1)
     model.fit(train)
 
-    # load test
+    # n-gram inspection 
+    export_ngram_inspection_json(model, n=3, topk=20, out_path=out_inspect)
+
+    # Load test
     test = load_jsonl(test_path)
     texts = [t for t, _ in test]
     gold = [y for _, y in test]
 
-    # find "most confident wrong" by ngram-normalized margin
+    # Find "most confident wrong" by ngram-normalized margin
     preds, margins = model.predict_with_scores(texts)
 
     best_i = None
@@ -143,7 +197,7 @@ def main() -> None:
     for i, (p, g, m) in enumerate(zip(preds, gold, margins)):
         if p == g:
             continue
-        txt_norm = norm(texts[i])
+        txt_norm = model.normalize(texts[i])
         ng = ngrams_count(txt_norm, model.n_min, model.n_max)
         m_norm = float(m) / float(ng)
         if m_norm > best_norm_margin:
@@ -151,22 +205,21 @@ def main() -> None:
             best_i = i
 
     if best_i is None:
-        print("No misclassifications found on test set. (Model may be perfect on this split.)")
+        print("All predictions correct.")
         return
 
     text = texts[best_i]
-    text_n = norm(text)
+    text_n = model.normalize(text)
     scores = log_posteriors(model, text)
-
     ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)
     (c1, s1), (c2, s2) = ranked[0], ranked[1]
 
     margin_raw = float(s1 - s2)
     margin_norm = margin_raw / float(ngrams_count(text_n, model.n_min, model.n_max))
-
     contrib = top_ngram_contributions(model, text, c1=c1, c2=c2, topk=10)
 
     example = {
+        "name": "NB interpretability: most confident wrong (ngram-normalized margin)",
         "index": int(best_i),
         "gold": gold[best_i],
         "pred": c1,
@@ -174,16 +227,16 @@ def main() -> None:
         "margin_raw": float(margin_raw),
         "margin_norm_ngram": float(margin_norm),
         "text_snippet": text_n[:300],
-        "prior_delta": contrib["prior_delta"],
+        "prior_delta": float(contrib["prior_delta"]),
         "top_contributions": contrib["top_contributions"],
         "note": "top_contributions sorted by |total_delta| for margin=score(pred)-score(runner_up)",
-        "model": {"n_min": model.n_min, "n_max": model.n_max, "alpha": model.alpha},
+        "model": {"n_min": int(model.n_min), "n_max": int(model.n_max), "alpha": float(model.alpha)},
     }
 
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(example, indent=2, ensure_ascii=False), encoding="utf-8")
+    out_example.parent.mkdir(parents=True, exist_ok=True)
+    out_example.write_text(json.dumps(example, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    # pretty print
+    # Pretty print
     print("\n=== NB interpretability ===")
     print("Selection : most confident wrong (ngram-normalized margin)")
     print(f"Index     : {example['index']}")
@@ -202,9 +255,9 @@ def main() -> None:
             f"cnt_pred={d['cnt_in_c1']} cnt_2nd={d['cnt_in_c2']}"
         )
 
-    print("\nSaved:", out_path)
+    print("\nSaved example JSON :", out_example)
+    print("Saved ngram JSON   :", out_inspect)
 
 
 if __name__ == "__main__":
     main()
-

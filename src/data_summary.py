@@ -1,5 +1,5 @@
+# WiLI split statistics
 from __future__ import annotations
-
 import json
 import statistics
 import unicodedata
@@ -22,7 +22,6 @@ def load_jsonl(path: Path) -> List[Tuple[str, str]]:
 
 
 def is_letter(ch: str) -> bool:
-    # Unicode general category: L* = Letter
     return unicodedata.category(ch).startswith("L")
 
 
@@ -34,28 +33,28 @@ def is_latin_letter(ch: str) -> bool:
 
 
 def split_stats(name: str, rows: List[Tuple[str, str]]) -> Dict:
+    """Char n-gram models"""
     texts = [t for t, _ in rows]
     langs = [y for _, y in rows]
 
-    # basic lengths
+    # Length stats
     lengths = [len(t) for t in texts]
     avg_len = sum(lengths) / max(1, len(lengths))
     med_len = statistics.median(lengths) if lengths else 0.0
 
-    # per-language counts
-    lang_counts = Counter(langs)
-    # keep canonical order, but don’t drop unknowns if present
+    lang_counts = Counter(langs) # per-language counts
+    # Keep canonical order, but don’t drop unknowns if present
     ordered_lang_counts = {lab: int(lang_counts.get(lab, 0)) for lab in LABELS}
     extra = {k: int(v) for k, v in lang_counts.items() if k not in LABEL_SET}
     if extra:
         ordered_lang_counts["_other"] = extra
 
-    # script stats (letters only)
+    # Script stats (letters only)
     total_letters = 0
     latin_letters = 0
     nonlatin_letters = 0
 
-    # also per-language script ratio
+    # Per-language Latin ratio
     per_lang_letters = defaultdict(int)
     per_lang_latin = defaultdict(int)
 
@@ -135,7 +134,7 @@ def main() -> None:
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
     print("Saved:", out_path)
 
-    # pretty print (compact)
+    
     print("\nMini data summary")
     for s in summaries:
         cl = s["char_length"]
@@ -146,8 +145,7 @@ def main() -> None:
 
         # top-5 languages by count
         lc = s["language_counts"]
-        # flatten counts excluding _other
-        flat = [(k, v) for k, v in lc.items() if k != "_other"]
+        flat = [(k, v) for k, v in lc.items() if k != "_other"] # flatten counts excluding _other
         flat.sort(key=lambda kv: kv[1], reverse=True)
         top5 = ", ".join([f"{k}:{v}" for k, v in flat[:5]])
         print(f"top langs: {top5}")

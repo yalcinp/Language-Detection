@@ -18,14 +18,14 @@ def main() -> None:
     parser.add_argument("--all", action="store_true", help="Run all ablations.")
     args = parser.parse_args()
 
-    # default: run all if no flag is given
+    # Run all if no flag is given 
     if not (args.preproc or args.space_short or args.all):
         args.all = True
 
     root = Path(__file__).resolve().parent
     py = sys.executable
 
-    # Scripts (relative to src/)
+    # script paths
     preproc_script = root / "eval_preproc_ablation.py"
     space_script = root / "eval_space_ablation.py"
 

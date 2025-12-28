@@ -1,0 +1,100 @@
+{
+  "name": "NB (full)",
+  "setting": "full",
+  "confidence": "margin(top1-top2), ngram-normalized (# 1-5 char-ngrams)",
+  "percentiles": [
+    0,
+    5,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    95,
+    99
+  ],
+  "curve": [
+    {
+      "tau": 0.01979406733992268,
+      "coverage": 1.0,
+      "accuracy": 0.991,
+      "n_kept": 6000
+    },
+    {
+      "tau": 0.7925593162801394,
+      "coverage": 0.95,
+      "accuracy": 0.998421052631579,
+      "n_kept": 5700
+    },
+    {
+      "tau": 0.9304484478477224,
+      "coverage": 0.9,
+      "accuracy": 0.9985185185185185,
+      "n_kept": 5400
+    },
+    {
+      "tau": 1.0762885422929762,
+      "coverage": 0.8,
+      "accuracy": 0.9991666666666666,
+      "n_kept": 4800
+    },
+    {
+      "tau": 1.1660606072523951,
+      "coverage": 0.7,
+      "accuracy": 0.9995238095238095,
+      "n_kept": 4200
+    },
+    {
+      "tau": 1.2652206388803724,
+      "coverage": 0.6,
+      "accuracy": 0.9997222222222222,
+      "n_kept": 3600
+    },
+    {
+      "tau": 1.4079352744488647,
+      "coverage": 0.5,
+      "accuracy": 1.0,
+      "n_kept": 3000
+    },
+    {
+      "tau": 1.750001834552366,
+      "coverage": 0.4,
+      "accuracy": 1.0,
+      "n_kept": 2400
+    },
+    {
+      "tau": 2.176152107053775,
+      "coverage": 0.3,
+      "accuracy": 1.0,
+      "n_kept": 1800
+    },
+    {
+      "tau": 2.560358249167414,
+      "coverage": 0.2,
+      "accuracy": 1.0,
+      "n_kept": 1200
+    },
+    {
+      "tau": 5.2796361169945385,
+      "coverage": 0.1,
+      "accuracy": 1.0,
+      "n_kept": 600
+    },
+    {
+      "tau": 5.562223469028751,
+      "coverage": 0.05,
+      "accuracy": 1.0,
+      "n_kept": 300
+    },
+    {
+      "tau": 5.87880233513124,
+      "coverage": 0.01,
+      "accuracy": 1.0,
+      "n_kept": 60
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "en": {
+    "precision": 0.9397,
+    "recall": 0.998,
+    "f1": 0.968,
+    "support": 500
+  },
+  "de": {
+    "precision": 0.9919,
+    "recall": 0.976,
+    "f1": 0.9839,
+    "support": 500
+  },
+  "fr": {
+    "precision": 0.9803,
+    "recall": 0.994,
+    "f1": 0.9871,
+    "support": 500
+  },
+  "es": {
+    "precision": 0.9959,
+    "recall": 0.978,
+    "f1": 0.9869,
+    "support": 500
+  },
+  "it": {
+    "precision": 0.994,
+    "recall": 0.988,
+    "f1": 0.991,
+    "support": 500
+  },
+  "tr": {
+    "precision": 1.0,
+    "recall": 0.99,
+    "f1": 0.995,
+    "support": 500
+  },
+  "nl": {
+    "precision": 1.0,
+    "recall": 0.992,
+    "f1": 0.996,
+    "support": 500
+  },
+  "sv": {
+    "precision": 1.0,
+    "recall": 0.998,
+    "f1": 0.999,
+    "support": 500
+  },
+  "pl": {
+    "precision": 0.998,
+    "recall": 0.994,
+    "f1": 0.996,
+    "support": 500
+  },
+  "ru": {
+    "precision": 0.996,
+    "recall": 0.998,
+    "f1": 0.997,
+    "support": 500
+  },
+  "ar": {
+    "precision": 1.0,
+    "recall": 0.996,
+    "f1": 0.998,
+    "support": 500
+  },
+  "zh": {
+    "precision": 1.0,
+    "recall": 0.99,
+    "f1": 0.995,
+    "support": 500
+  }
+}

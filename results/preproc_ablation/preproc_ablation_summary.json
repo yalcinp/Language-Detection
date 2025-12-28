@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "config": "lower=0 nfkc=0 punctdrop=0",
+      "nb_acc": 0.991,
+      "nb_macro_f1": 0.9910610073622412,
+      "langid_acc": 0.9878333333333333,
+      "langid_macro_f1": 0.9878731571612912,
+      "fasttext_acc": 0.9893333333333333,
+      "fasttext_macro_f1": 0.8482023302390816
+    },
+    {
+      "config": "lower=0 nfkc=0 punctdrop=1",
+      "nb_acc": 0.9895,
+      "nb_macro_f1": 0.9895654505674862,
+      "langid_acc": 0.9875,
+      "langid_macro_f1": 0.9875413047562845,
+      "fasttext_acc": 0.9888333333333333,
+      "fasttext_macro_f1": 0.7419011995089311
+    },
+    {
+      "config": "lower=0 nfkc=1 punctdrop=0",
+      "nb_acc": 0.991,
+      "nb_macro_f1": 0.9910610073622412,
+      "langid_acc": 0.9878333333333333,
+      "langid_macro_f1": 0.9878731571612912,
+      "fasttext_acc": 0.989,
+      "fasttext_macro_f1": 0.7914594366410975
+    },
+    {
+      "config": "lower=0 nfkc=1 punctdrop=1",
+      "nb_acc": 0.9895,
+      "nb_macro_f1": 0.9895654505674862,
+      "langid_acc": 0.9875,
+      "langid_macro_f1": 0.9875413047562845,
+      "fasttext_acc": 0.9888333333333333,
+      "fasttext_macro_f1": 0.7419011995089311
+    },
+    {
+      "config": "lower=1 nfkc=0 punctdrop=0",
+      "nb_acc": 0.991,
+      "nb_macro_f1": 0.9910610073622412,
+      "langid_acc": 0.9868333333333333,
+      "langid_macro_f1": 0.9868836196593117,
+      "fasttext_acc": 0.989,
+      "fasttext_macro_f1": 0.8478932846768029
+    },
+    {
+      "config": "lower=1 nfkc=0 punctdrop=1",
+      "nb_acc": 0.9895,
+      "nb_macro_f1": 0.9895654505674862,
+      "langid_acc": 0.9863333333333333,
+      "langid_macro_f1": 0.9863876910408068,
+      "fasttext_acc": 0.9885,
+      "fasttext_macro_f1": 0.7416554153407178
+    },
+    {
+      "config": "lower=1 nfkc=1 punctdrop=0",
+      "nb_acc": 0.991,
+      "nb_macro_f1": 0.9910610073622412,
+      "langid_acc": 0.9866666666666667,
+      "langid_macro_f1": 0.9867174448612254,
+      "fasttext_acc": 0.9886666666666667,
+      "fasttext_macro_f1": 0.7911702715029062
+    },
+    {
+      "config": "lower=1 nfkc=1 punctdrop=1",
+      "nb_acc": 0.9895,
+      "nb_macro_f1": 0.9895654505674862,
+      "langid_acc": 0.9863333333333333,
+      "langid_macro_f1": 0.9863876910408068,
+      "fasttext_acc": 0.9885,
+      "fasttext_macro_f1": 0.7416554153407178
+    }
+  ]
+}

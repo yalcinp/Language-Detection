@@ -1,0 +1,300 @@
+{
+  "label_space": [
+    "en",
+    "de",
+    "fr",
+    "es",
+    "it",
+    "tr",
+    "nl",
+    "sv",
+    "pl",
+    "ru",
+    "ar",
+    "zh"
+  ],
+  "splits": [
+    {
+      "split": "train",
+      "n_rows": 5400,
+      "n_languages": 12,
+      "language_counts": {
+        "en": 450,
+        "de": 450,
+        "fr": 450,
+        "es": 450,
+        "it": 450,
+        "tr": 450,
+        "nl": 450,
+        "sv": 450,
+        "pl": 450,
+        "ru": 450,
+        "ar": 450,
+        "zh": 450
+      },
+      "char_length": {
+        "avg": 391.96222222222224,
+        "median": 307.0,
+        "min": 140,
+        "max": 3524
+      },
+      "script_letters_only": {
+        "total_letters": 1698350,
+        "latin_letters": 1312611,
+        "nonlatin_letters": 385739,
+        "latin_ratio": 0.7728742603114788,
+        "nonlatin_ratio": 0.2271257396885212
+      },
+      "per_language_script": {
+        "ar": {
+          "letters": 150742,
+          "latin_letters": 1796,
+          "latin_ratio": 0.01191439678390893
+        },
+        "de": {
+          "letters": 162462,
+          "latin_letters": 162418,
+          "latin_ratio": 0.9997291674360773
+        },
+        "en": {
+          "letters": 155981,
+          "latin_letters": 155887,
+          "latin_ratio": 0.9993973624992788
+        },
+        "es": {
+          "letters": 143057,
+          "latin_letters": 142975,
+          "latin_ratio": 0.9994268019041361
+        },
+        "fr": {
+          "letters": 143103,
+          "latin_letters": 143067,
+          "latin_ratio": 0.9997484329468984
+        },
+        "it": {
+          "letters": 151258,
+          "latin_letters": 151246,
+          "latin_ratio": 0.9999206653532375
+        },
+        "nl": {
+          "letters": 135871,
+          "latin_letters": 135861,
+          "latin_ratio": 0.9999264007772078
+        },
+        "pl": {
+          "letters": 137376,
+          "latin_letters": 137201,
+          "latin_ratio": 0.9987261239226648
+        },
+        "ru": {
+          "letters": 151631,
+          "latin_letters": 3185,
+          "latin_ratio": 0.021004939623164128
+        },
+        "sv": {
+          "letters": 119646,
+          "latin_letters": 119540,
+          "latin_ratio": 0.9991140531233806
+        },
+        "tr": {
+          "letters": 151321,
+          "latin_letters": 151115,
+          "latin_ratio": 0.9986386555732516
+        },
+        "zh": {
+          "letters": 95902,
+          "latin_letters": 8320,
+          "latin_ratio": 0.08675522929657359
+        }
+      }
+    },
+    {
+      "split": "dev",
+      "n_rows": 600,
+      "n_languages": 12,
+      "language_counts": {
+        "en": 50,
+        "de": 50,
+        "fr": 50,
+        "es": 50,
+        "it": 50,
+        "tr": 50,
+        "nl": 50,
+        "sv": 50,
+        "pl": 50,
+        "ru": 50,
+        "ar": 50,
+        "zh": 50
+      },
+      "char_length": {
+        "avg": 393.7783333333333,
+        "median": 303.0,
+        "min": 140,
+        "max": 1802
+      },
+      "script_letters_only": {
+        "total_letters": 189673,
+        "latin_letters": 145523,
+        "nonlatin_letters": 44150,
+        "latin_ratio": 0.7672309711977983,
+        "nonlatin_ratio": 0.23276902880220168
+      },
+      "per_language_script": {
+        "ar": {
+          "letters": 14591,
+          "latin_letters": 122,
+          "latin_ratio": 0.008361318621067782
+        },
+        "de": {
+          "letters": 17617,
+          "latin_letters": 17611,
+          "latin_ratio": 0.9996594198785265
+        },
+        "en": {
+          "letters": 16245,
+          "latin_letters": 16235,
+          "latin_ratio": 0.9993844259772238
+        },
+        "es": {
+          "letters": 15480,
+          "latin_letters": 15476,
+          "latin_ratio": 0.9997416020671834
+        },
+        "fr": {
+          "letters": 16778,
+          "latin_letters": 16778,
+          "latin_ratio": 1.0
+        },
+        "it": {
+          "letters": 17563,
+          "latin_letters": 17539,
+          "latin_ratio": 0.9986334908614701
+        },
+        "nl": {
+          "letters": 13477,
+          "latin_letters": 13471,
+          "latin_ratio": 0.9995547970616606
+        },
+        "pl": {
+          "letters": 17993,
+          "latin_letters": 17986,
+          "latin_ratio": 0.9996109598177069
+        },
+        "ru": {
+          "letters": 20199,
+          "latin_letters": 376,
+          "latin_ratio": 0.018614782910045053
+        },
+        "sv": {
+          "letters": 12444,
+          "latin_letters": 12436,
+          "latin_ratio": 0.9993571198971392
+        },
+        "tr": {
+          "letters": 16635,
+          "latin_letters": 16609,
+          "latin_ratio": 0.9984370303576796
+        },
+        "zh": {
+          "letters": 10651,
+          "latin_letters": 884,
+          "latin_ratio": 0.08299690169937095
+        }
+      }
+    },
+    {
+      "split": "test",
+      "n_rows": 6000,
+      "n_languages": 12,
+      "language_counts": {
+        "en": 500,
+        "de": 500,
+        "fr": 500,
+        "es": 500,
+        "it": 500,
+        "tr": 500,
+        "nl": 500,
+        "sv": 500,
+        "pl": 500,
+        "ru": 500,
+        "ar": 500,
+        "zh": 500
+      },
+      "char_length": {
+        "avg": 393.4285,
+        "median": 300.5,
+        "min": 140,
+        "max": 3324
+      },
+      "script_letters_only": {
+        "total_letters": 1894289,
+        "latin_letters": 1452131,
+        "nonlatin_letters": 442158,
+        "latin_ratio": 0.7665836627885185,
+        "nonlatin_ratio": 0.23341633721148144
+      },
+      "per_language_script": {
+        "ar": {
+          "letters": 174604,
+          "latin_letters": 2075,
+          "latin_ratio": 0.01188403473001764
+        },
+        "de": {
+          "letters": 171215,
+          "latin_letters": 170993,
+          "latin_ratio": 0.9987033846333557
+        },
+        "en": {
+          "letters": 168436,
+          "latin_letters": 168381,
+          "latin_ratio": 0.9996734664798499
+        },
+        "es": {
+          "letters": 164027,
+          "latin_letters": 163907,
+          "latin_ratio": 0.9992684131271071
+        },
+        "fr": {
+          "letters": 169317,
+          "latin_letters": 169242,
+          "latin_ratio": 0.9995570438880915
+        },
+        "it": {
+          "letters": 175939,
+          "latin_letters": 175831,
+          "latin_ratio": 0.9993861508818397
+        },
+        "nl": {
+          "letters": 136211,
+          "latin_letters": 136170,
+          "latin_ratio": 0.9996989964099816
+        },
+        "pl": {
+          "letters": 161258,
+          "latin_letters": 161093,
+          "latin_ratio": 0.9989767949497079
+        },
+        "ru": {
+          "letters": 174871,
+          "latin_letters": 2136,
+          "latin_ratio": 0.012214718278044958
+        },
+        "sv": {
+          "letters": 133789,
+          "latin_letters": 133668,
+          "latin_ratio": 0.9990955908183782
+        },
+        "tr": {
+          "letters": 162338,
+          "latin_letters": 162112,
+          "latin_ratio": 0.9986078428956868
+        },
+        "zh": {
+          "letters": 102284,
+          "latin_letters": 6523,
+          "latin_ratio": 0.06377341519690274
+        }
+      }
+    }
+  ]
+}

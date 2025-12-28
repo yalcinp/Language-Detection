@@ -1,0 +1,1487 @@
+{
+  "name": "NB global n-gram inspection (n=3)",
+  "n": 3,
+  "topk": 20,
+  "alpha": 0.1,
+  "labels": [
+    "ar",
+    "de",
+    "en",
+    "es",
+    "fr",
+    "it",
+    "nl",
+    "pl",
+    "ru",
+    "sv",
+    "tr",
+    "zh"
+  ],
+  "method": "log_odds(log P(ng|c) - log P(ng|not c))",
+  "top_ngrams": {
+    "ar": [
+      {
+        "ngram": "في ",
+        "log_odds": 11.693596831572926,
+        "count_in_class": 1312,
+        "count_outside": 0
+      },
+      {
+        "ngram": " في",
+        "log_odds": 11.67978339728888,
+        "count_in_class": 1294,
+        "count_outside": 0
+      },
+      {
+        "ngram": " من",
+        "log_odds": 11.471805159290565,
+        "count_in_class": 1051,
+        "count_outside": 0
+      },
+      {
+        "ngram": "من ",
+        "log_odds": 11.419063711296003,
+        "count_in_class": 997,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ن ا",
+        "log_odds": 11.405940163366196,
+        "count_in_class": 984,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ات ",
+        "log_odds": 11.261916536295166,
+        "count_in_class": 852,
+        "count_outside": 0
+      },
+      {
+        "ngram": "لى ",
+        "log_odds": 11.185105700988245,
+        "count_in_class": 789,
+        "count_outside": 0
+      },
+      {
+        "ngram": " وا",
+        "log_odds": 11.177473047218147,
+        "count_in_class": 783,
+        "count_outside": 0
+      },
+      {
+        "ngram": "الت",
+        "log_odds": 11.097760170642161,
+        "count_in_class": 723,
+        "count_outside": 0
+      },
+      {
+        "ngram": "وال",
+        "log_odds": 11.045236035158101,
+        "count_in_class": 686,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ي ا",
+        "log_odds": 10.991338842671679,
+        "count_in_class": 650,
+        "count_outside": 0
+      },
+      {
+        "ngram": "، و",
+        "log_odds": 10.947313496982229,
+        "count_in_class": 622,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ت ا",
+        "log_odds": 10.892808593988896,
+        "count_in_class": 589,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ل ا",
+        "log_odds": 10.77780136610507,
+        "count_in_class": 525,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ها ",
+        "log_odds": 10.72099016476826,
+        "count_in_class": 496,
+        "count_outside": 0
+      },
+      {
+        "ngram": "الب",
+        "log_odds": 10.681938757983318,
+        "count_in_class": 477,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ما ",
+        "log_odds": 10.665028610795668,
+        "count_in_class": 469,
+        "count_outside": 0
+      },
+      {
+        "ngram": "على",
+        "log_odds": 10.654312691708386,
+        "count_in_class": 464,
+        "count_outside": 0
+      },
+      {
+        "ngram": "الح",
+        "log_odds": 10.580552727214345,
+        "count_in_class": 431,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ال ",
+        "log_odds": 10.575902637458736,
+        "count_in_class": 429,
+        "count_outside": 0
+      }
+    ],
+    "de": [
+      {
+        "ngram": " üb",
+        "log_odds": 9.276660616555558,
+        "count_in_class": 122,
+        "count_outside": 0
+      },
+      {
+        "ngram": "hrt",
+        "log_odds": 8.816923516008185,
+        "count_in_class": 77,
+        "count_outside": 0
+      },
+      {
+        "ngram": "efm",
+        "log_odds": 8.707374966212525,
+        "count_in_class": 69,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ihr",
+        "log_odds": 8.647744784653424,
+        "count_in_class": 65,
+        "count_outside": 0
+      },
+      {
+        "ngram": "äch",
+        "log_odds": 8.58433210161645,
+        "count_in_class": 61,
+        "count_outside": 0
+      },
+      {
+        "ngram": "wäh",
+        "log_odds": 8.516624352100864,
+        "count_in_class": 57,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ähr",
+        "log_odds": 8.42498518419822,
+        "count_in_class": 52,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ufg",
+        "log_odds": 8.235343232548603,
+        "count_in_class": 43,
+        "count_outside": 0
+      },
+      {
+        "ngram": "uße",
+        "log_odds": 8.18782835694109,
+        "count_in_class": 41,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ßer",
+        "log_odds": 8.163196569751424,
+        "count_in_class": 40,
+        "count_outside": 0
+      },
+      {
+        "ngram": " eh",
+        "log_odds": 8.058113100777735,
+        "count_in_class": 36,
+        "count_outside": 0
+      },
+      {
+        "ngram": "spä",
+        "log_odds": 8.03002136591072,
+        "count_in_class": 35,
+        "count_outside": 0
+      },
+      {
+        "ngram": "hlt",
+        "log_odds": 8.03002136591072,
+        "count_in_class": 35,
+        "count_outside": 0
+      },
+      {
+        "ngram": "pät",
+        "log_odds": 7.9713535178219175,
+        "count_in_class": 33,
+        "count_outside": 0
+      },
+      {
+        "ngram": "tgl",
+        "log_odds": 7.9713535178219175,
+        "count_in_class": 33,
+        "count_outside": 0
+      },
+      {
+        "ngram": "abg",
+        "log_odds": 7.94067626557487,
+        "count_in_class": 32,
+        "count_outside": 0
+      },
+      {
+        "ngram": "igk",
+        "log_odds": 7.87634540719373,
+        "count_in_class": 30,
+        "count_outside": 0
+      },
+      {
+        "ngram": "rüh",
+        "log_odds": 7.87634540719373,
+        "count_in_class": 30,
+        "count_outside": 0
+      },
+      {
+        "ngram": " wä",
+        "log_odds": 7.87634540719373,
+        "count_in_class": 30,
+        "count_outside": 0
+      },
+      {
+        "ngram": "küh",
+        "log_odds": 7.8425584096163465,
+        "count_in_class": 29,
+        "count_outside": 0
+      }
+    ],
+    "en": [
+      {
+        "ngram": "tly",
+        "log_odds": 8.286370452009367,
+        "count_in_class": 45,
+        "count_outside": 0
+      },
+      {
+        "ngram": " lt",
+        "log_odds": 7.478208020565765,
+        "count_in_class": 20,
+        "count_outside": 0
+      },
+      {
+        "ngram": "wev",
+        "log_odds": 7.427176540553319,
+        "count_in_class": 19,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ltd",
+        "log_odds": 7.427176540553319,
+        "count_in_class": 19,
+        "count_outside": 0
+      },
+      {
+        "ngram": "dly",
+        "log_odds": 7.373400143772516,
+        "count_in_class": 18,
+        "count_outside": 0
+      },
+      {
+        "ngram": "m's",
+        "log_odds": 7.316566669009349,
+        "count_in_class": 17,
+        "count_outside": 0
+      },
+      {
+        "ngram": "\"i ",
+        "log_odds": 7.05010043570784,
+        "count_in_class": 13,
+        "count_outside": 0
+      },
+      {
+        "ngram": "td ",
+        "log_odds": 7.05010043570784,
+        "count_in_class": 13,
+        "count_outside": 0
+      },
+      {
+        "ngram": "sly",
+        "log_odds": 6.790023629347948,
+        "count_in_class": 10,
+        "count_outside": 0
+      },
+      {
+        "ngram": "0s ",
+        "log_odds": 6.790023629347948,
+        "count_in_class": 10,
+        "count_outside": 0
+      },
+      {
+        "ngram": "sh-",
+        "log_odds": 6.790023629347948,
+        "count_in_class": 10,
+        "count_outside": 0
+      },
+      {
+        "ngram": "-ye",
+        "log_odds": 6.685762619023539,
+        "count_in_class": 9,
+        "count_outside": 0
+      },
+      {
+        "ngram": "few",
+        "log_odds": 6.685762619023539,
+        "count_in_class": 9,
+        "count_outside": 0
+      },
+      {
+        "ngram": "9th",
+        "log_odds": 6.685762619023539,
+        "count_in_class": 9,
+        "count_outside": 0
+      },
+      {
+        "ngram": "yrl",
+        "log_odds": 6.685762619023539,
+        "count_in_class": 9,
+        "count_outside": 0
+      },
+      {
+        "ngram": "70s",
+        "log_odds": 6.685762619023539,
+        "count_in_class": 9,
+        "count_outside": 0
+      },
+      {
+        "ngram": "0s,",
+        "log_odds": 6.685762619023539,
+        "count_in_class": 9,
+        "count_outside": 0
+      },
+      {
+        "ngram": "vaj",
+        "log_odds": 6.685762619023539,
+        "count_in_class": 9,
+        "count_outside": 0
+      },
+      {
+        "ngram": "e.\"",
+        "log_odds": 6.685762619023539,
+        "count_in_class": 9,
+        "count_outside": 0
+      },
+      {
+        "ngram": "wsu",
+        "log_odds": 6.569352267179127,
+        "count_in_class": 8,
+        "count_outside": 0
+      }
+    ],
+    "es": [
+      {
+        "ngram": "año",
+        "log_odds": 9.408920513783174,
+        "count_in_class": 126,
+        "count_outside": 0
+      },
+      {
+        "ngram": "más",
+        "log_odds": 9.376685651928959,
+        "count_in_class": 122,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ás ",
+        "log_odds": 9.368461921371347,
+        "count_in_class": 121,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ó e",
+        "log_odds": 9.083803075078213,
+        "count_in_class": 91,
+        "count_outside": 0
+      },
+      {
+        "ngram": " añ",
+        "log_odds": 9.015672306391629,
+        "count_in_class": 85,
+        "count_outside": 0
+      },
+      {
+        "ngram": "]​ ",
+        "log_odds": 8.991889972673704,
+        "count_in_class": 83,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ó a",
+        "log_odds": 8.807400001585924,
+        "count_in_class": 69,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ño ",
+        "log_odds": 8.716566040359469,
+        "count_in_class": 63,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ién",
+        "log_odds": 8.684357136989851,
+        "count_in_class": 61,
+        "count_outside": 0
+      },
+      {
+        "ngram": "pué",
+        "log_odds": 8.544022199060194,
+        "count_in_class": 53,
+        "count_outside": 0
+      },
+      {
+        "ngram": "stá",
+        "log_odds": 8.525010219571621,
+        "count_in_class": 52,
+        "count_outside": 0
+      },
+      {
+        "ngram": "bié",
+        "log_odds": 8.485866278903119,
+        "count_in_class": 50,
+        "count_outside": 0
+      },
+      {
+        "ngram": "1]​",
+        "log_odds": 8.485866278903119,
+        "count_in_class": 50,
+        "count_outside": 0
+      },
+      {
+        "ngram": ".[1",
+        "log_odds": 8.445127447924015,
+        "count_in_class": 48,
+        "count_outside": 0
+      },
+      {
+        "ngram": "]​[",
+        "log_odds": 8.3583050532651,
+        "count_in_class": 44,
+        "count_outside": 0
+      },
+      {
+        "ngram": "2]​",
+        "log_odds": 8.311893011500636,
+        "count_in_class": 42,
+        "count_outside": 0
+      },
+      {
+        "ngram": "bía",
+        "log_odds": 8.287853392314489,
+        "count_in_class": 41,
+        "count_outside": 0
+      },
+      {
+        "ngram": "abí",
+        "log_odds": 8.18546224042569,
+        "count_in_class": 37,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ían",
+        "log_odds": 8.13004640128412,
+        "count_in_class": 35,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ó c",
+        "log_odds": 8.13004640128412,
+        "count_in_class": 35,
+        "count_outside": 0
+      }
+    ],
+    "fr": [
+      {
+        "ngram": "e à",
+        "log_odds": 9.459455000901094,
+        "count_in_class": 134,
+        "count_outside": 0
+      },
+      {
+        "ngram": "éta",
+        "log_odds": 9.381956902824024,
+        "count_in_class": 124,
+        "count_outside": 0
+      },
+      {
+        "ngram": "t à",
+        "log_odds": 9.297944467481491,
+        "count_in_class": 114,
+        "count_outside": 0
+      },
+      {
+        "ngram": "qu'",
+        "log_odds": 9.196568601636375,
+        "count_in_class": 103,
+        "count_outside": 0
+      },
+      {
+        "ngram": "l'é",
+        "log_odds": 9.167038896934637,
+        "count_in_class": 100,
+        "count_outside": 0
+      },
+      {
+        "ngram": "été",
+        "log_odds": 9.14685657718478,
+        "count_in_class": 98,
+        "count_outside": 0
+      },
+      {
+        "ngram": "nné",
+        "log_odds": 9.00469624619279,
+        "count_in_class": 85,
+        "count_outside": 0
+      },
+      {
+        "ngram": "équ",
+        "log_odds": 8.721313574540087,
+        "count_in_class": 64,
+        "count_outside": 0
+      },
+      {
+        "ngram": "foi",
+        "log_odds": 8.570018926772331,
+        "count_in_class": 55,
+        "count_outside": 0
+      },
+      {
+        "ngram": " • ",
+        "log_odds": 8.533046138861355,
+        "count_in_class": 53,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ême",
+        "log_odds": 8.347328993066263,
+        "count_in_class": 44,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ési",
+        "log_odds": 8.347328993066263,
+        "count_in_class": 44,
+        "count_outside": 0
+      },
+      {
+        "ngram": "éal",
+        "log_odds": 8.324392207723164,
+        "count_in_class": 43,
+        "count_outside": 0
+      },
+      {
+        "ngram": "'il",
+        "log_odds": 8.300916951301797,
+        "count_in_class": 42,
+        "count_outside": 0
+      },
+      {
+        "ngram": "nté",
+        "log_odds": 8.300916951301797,
+        "count_in_class": 42,
+        "count_outside": 0
+      },
+      {
+        "ngram": " n'",
+        "log_odds": 8.300916951301797,
+        "count_in_class": 42,
+        "count_outside": 0
+      },
+      {
+        "ngram": ", à",
+        "log_odds": 8.276877332115651,
+        "count_in_class": 41,
+        "count_outside": 0
+      },
+      {
+        "ngram": "tée",
+        "log_odds": 8.276877332115651,
+        "count_in_class": 41,
+        "count_outside": 0
+      },
+      {
+        "ngram": "'ét",
+        "log_odds": 8.276877332115651,
+        "count_in_class": 41,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ffé",
+        "log_odds": 8.276877332115651,
+        "count_in_class": 41,
+        "count_outside": 0
+      }
+    ],
+    "it": [
+      {
+        "ngram": " è ",
+        "log_odds": 10.31186205593764,
+        "count_in_class": 328,
+        "count_outside": 0
+      },
+      {
+        "ngram": "più",
+        "log_odds": 9.290075339173901,
+        "count_in_class": 118,
+        "count_outside": 0
+      },
+      {
+        "ngram": "iù ",
+        "log_odds": 9.290075339173901,
+        "count_in_class": 118,
+        "count_outside": 0
+      },
+      {
+        "ngram": "suo",
+        "log_odds": 9.192306593424288,
+        "count_in_class": 107,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ità",
+        "log_odds": 9.163895591591508,
+        "count_in_class": 104,
+        "count_outside": 0
+      },
+      {
+        "ngram": "è s",
+        "log_odds": 9.083932931946832,
+        "count_in_class": 96,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ttà",
+        "log_odds": 8.926481632428967,
+        "count_in_class": 82,
+        "count_outside": 0
+      },
+      {
+        "ngram": "uov",
+        "log_odds": 8.76846641001113,
+        "count_in_class": 70,
+        "count_outside": 0
+      },
+      {
+        "ngram": "o è",
+        "log_odds": 8.305003398423384,
+        "count_in_class": 44,
+        "count_outside": 0
+      },
+      {
+        "ngram": "rà ",
+        "log_odds": 8.25859135665892,
+        "count_in_class": 42,
+        "count_outside": 0
+      },
+      {
+        "ngram": ", è",
+        "log_odds": 8.10483648130942,
+        "count_in_class": 36,
+        "count_outside": 0
+      },
+      {
+        "ngram": "a è",
+        "log_odds": 8.076744746442404,
+        "count_in_class": 35,
+        "count_outside": 0
+      },
+      {
+        "ngram": "i è",
+        "log_odds": 8.018076898353602,
+        "count_in_class": 33,
+        "count_outside": 0
+      },
+      {
+        "ngram": "è u",
+        "log_odds": 7.987399646106555,
+        "count_in_class": 32,
+        "count_outside": 0
+      },
+      {
+        "ngram": "è i",
+        "log_odds": 7.9230687877254145,
+        "count_in_class": 30,
+        "count_outside": 0
+      },
+      {
+        "ngram": "è d",
+        "log_odds": 7.889281790148031,
+        "count_in_class": 29,
+        "count_outside": 0
+      },
+      {
+        "ngram": "è l",
+        "log_odds": 7.889281790148031,
+        "count_in_class": 29,
+        "count_outside": 0
+      },
+      {
+        "ngram": "è a",
+        "log_odds": 7.81807734385624,
+        "count_in_class": 27,
+        "count_outside": 0
+      },
+      {
+        "ngram": "uol",
+        "log_odds": 7.81807734385624,
+        "count_in_class": 27,
+        "count_outside": 0
+      },
+      {
+        "ngram": "erà",
+        "log_odds": 7.780478930299232,
+        "count_in_class": 26,
+        "count_outside": 0
+      }
+    ],
+    "nl": [
+      {
+        "ngram": "zij",
+        "log_odds": 10.235074438150393,
+        "count_in_class": 271,
+        "count_outside": 0
+      },
+      {
+        "ngram": "jke",
+        "log_odds": 9.56056474206102,
+        "count_in_class": 138,
+        "count_outside": 0
+      },
+      {
+        "ngram": "waa",
+        "log_odds": 9.553297268214042,
+        "count_in_class": 137,
+        "count_outside": 0
+      },
+      {
+        "ngram": " oo",
+        "log_odds": 9.553297268214042,
+        "count_in_class": 137,
+        "count_outside": 0
+      },
+      {
+        "ngram": "laa",
+        "log_odds": 9.44558371483618,
+        "count_in_class": 123,
+        "count_outside": 0
+      },
+      {
+        "ngram": "jk ",
+        "log_odds": 9.248696807672198,
+        "count_in_class": 101,
+        "count_outside": 0
+      },
+      {
+        "ngram": "daa",
+        "log_odds": 9.088096093079457,
+        "count_in_class": 86,
+        "count_outside": 0
+      },
+      {
+        "ngram": "zoe",
+        "log_odds": 8.505868858757488,
+        "count_in_class": 48,
+        "count_outside": 0
+      },
+      {
+        "ngram": "jaa",
+        "log_odds": 8.441468928154405,
+        "count_in_class": 45,
+        "count_outside": 0
+      },
+      {
+        "ngram": "oeg",
+        "log_odds": 8.419046464098573,
+        "count_in_class": 44,
+        "count_outside": 0
+      },
+      {
+        "ngram": "moe",
+        "log_odds": 8.419046464098573,
+        "count_in_class": 44,
+        "count_outside": 0
+      },
+      {
+        "ngram": "oek",
+        "log_odds": 8.372634422334109,
+        "count_in_class": 42,
+        "count_outside": 0
+      },
+      {
+        "ngram": "vee",
+        "log_odds": 8.348594803147963,
+        "count_in_class": 41,
+        "count_outside": 0
+      },
+      {
+        "ngram": " ee",
+        "log_odds": 8.279030737228283,
+        "count_in_class": 805,
+        "count_outside": 2
+      },
+      {
+        "ngram": "fde",
+        "log_odds": 8.190787812117593,
+        "count_in_class": 35,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ijf",
+        "log_odds": 8.161884065935244,
+        "count_in_class": 34,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ijv",
+        "log_odds": 8.101442711781743,
+        "count_in_class": 32,
+        "count_outside": 0
+      },
+      {
+        "ngram": "opg",
+        "log_odds": 8.06979450083096,
+        "count_in_class": 31,
+        "count_outside": 0
+      },
+      {
+        "ngram": "gaa",
+        "log_odds": 8.06979450083096,
+        "count_in_class": 31,
+        "count_outside": 0
+      },
+      {
+        "ngram": "pge",
+        "log_odds": 8.037111853400603,
+        "count_in_class": 30,
+        "count_outside": 0
+      }
+    ],
+    "pl": [
+      {
+        "ngram": " w ",
+        "log_odds": 11.702577409985814,
+        "count_in_class": 1183,
+        "count_outside": 0
+      },
+      {
+        "ngram": "dzi",
+        "log_odds": 10.806907690286558,
+        "count_in_class": 483,
+        "count_outside": 0
+      },
+      {
+        "ngram": "się",
+        "log_odds": 10.350595864677564,
+        "count_in_class": 306,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ał ",
+        "log_odds": 10.344040613409517,
+        "count_in_class": 304,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ów ",
+        "log_odds": 10.300350869477775,
+        "count_in_class": 291,
+        "count_outside": 0
+      },
+      {
+        "ngram": "czn",
+        "log_odds": 10.268945636734149,
+        "count_in_class": 282,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ię ",
+        "log_odds": 10.225476279524768,
+        "count_in_class": 270,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ła ",
+        "log_odds": 10.152535284889737,
+        "count_in_class": 251,
+        "count_outside": 0
+      },
+      {
+        "ngram": "acj",
+        "log_odds": 9.969496625160785,
+        "count_in_class": 209,
+        "count_outside": 0
+      },
+      {
+        "ngram": "tał",
+        "log_odds": 9.910395232884872,
+        "count_in_class": 197,
+        "count_outside": 0
+      },
+      {
+        "ngram": "cji",
+        "log_odds": 9.889892208160665,
+        "count_in_class": 193,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ała",
+        "log_odds": 9.863657755033183,
+        "count_in_class": 188,
+        "count_outside": 0
+      },
+      {
+        "ngram": "był",
+        "log_odds": 9.820196270908108,
+        "count_in_class": 180,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ło ",
+        "log_odds": 9.768932199624345,
+        "count_in_class": 171,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ył ",
+        "log_odds": 9.727160016822243,
+        "count_in_class": 164,
+        "count_outside": 0
+      },
+      {
+        "ngram": "któ",
+        "log_odds": 9.69621695406994,
+        "count_in_class": 159,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ycz",
+        "log_odds": 9.69621695406994,
+        "count_in_class": 159,
+        "count_outside": 0
+      },
+      {
+        "ngram": "cza",
+        "log_odds": 9.664285761052268,
+        "count_in_class": 154,
+        "count_outside": 0
+      },
+      {
+        "ngram": "wał",
+        "log_odds": 9.576152877584965,
+        "count_in_class": 141,
+        "count_outside": 0
+      },
+      {
+        "ngram": "odz",
+        "log_odds": 9.561877117655595,
+        "count_in_class": 139,
+        "count_outside": 0
+      }
+    ],
+    "ru": [
+      {
+        "ngram": " в ",
+        "log_odds": 11.466072817732421,
+        "count_in_class": 1019,
+        "count_outside": 0
+      },
+      {
+        "ngram": " пр",
+        "log_odds": 11.453234403195777,
+        "count_in_class": 1006,
+        "count_outside": 0
+      },
+      {
+        "ngram": " по",
+        "log_odds": 11.431125171802712,
+        "count_in_class": 984,
+        "count_outside": 0
+      },
+      {
+        "ngram": " и ",
+        "log_odds": 11.289445936849875,
+        "count_in_class": 854,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ой ",
+        "log_odds": 11.196252704520656,
+        "count_in_class": 778,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ени",
+        "log_odds": 11.099154524420074,
+        "count_in_class": 706,
+        "count_outside": 0
+      },
+      {
+        "ngram": "го ",
+        "log_odds": 11.09631804542286,
+        "count_in_class": 704,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ого",
+        "log_odds": 10.959555435233126,
+        "count_in_class": 614,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ств",
+        "log_odds": 10.923073193435503,
+        "count_in_class": 592,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ост",
+        "log_odds": 10.825581950809188,
+        "count_in_class": 537,
+        "count_outside": 0
+      },
+      {
+        "ngram": "про",
+        "log_odds": 10.758196956938432,
+        "count_in_class": 502,
+        "count_outside": 0
+      },
+      {
+        "ngram": " со",
+        "log_odds": 10.731964621443083,
+        "count_in_class": 489,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ова",
+        "log_odds": 10.717549215309349,
+        "count_in_class": 482,
+        "count_outside": 0
+      },
+      {
+        "ngram": " го",
+        "log_odds": 10.670841511059194,
+        "count_in_class": 460,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ие ",
+        "log_odds": 10.610366302118354,
+        "count_in_class": 433,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ия ",
+        "log_odds": 10.589366930378318,
+        "count_in_class": 424,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ом ",
+        "log_odds": 10.560663692242544,
+        "count_in_class": 412,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ых ",
+        "log_odds": 10.531112169760963,
+        "count_in_class": 400,
+        "count_outside": 0
+      },
+      {
+        "ngram": " за",
+        "log_odds": 10.521064358525644,
+        "count_in_class": 396,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ии ",
+        "log_odds": 10.518536551315119,
+        "count_in_class": 395,
+        "count_outside": 0
+      }
+    ],
+    "sv": [
+      {
+        "ngram": "bör",
+        "log_odds": 10.279503053319482,
+        "count_in_class": 252,
+        "count_outside": 0
+      },
+      {
+        "ngram": " år",
+        "log_odds": 10.222367972618425,
+        "count_in_class": 238,
+        "count_outside": 0
+      },
+      {
+        "ngram": "åna",
+        "log_odds": 10.201144765167319,
+        "count_in_class": 233,
+        "count_outside": 0
+      },
+      {
+        "ngram": "rbö",
+        "log_odds": 10.183835808585059,
+        "count_in_class": 229,
+        "count_outside": 0
+      },
+      {
+        "ngram": " på",
+        "log_odds": 9.99195319479002,
+        "count_in_class": 189,
+        "count_outside": 0
+      },
+      {
+        "ngram": "år ",
+        "log_odds": 9.926391763914395,
+        "count_in_class": 177,
+        "count_outside": 0
+      },
+      {
+        "ngram": "på ",
+        "log_odds": 9.903546681307771,
+        "count_in_class": 173,
+        "count_outside": 0
+      },
+      {
+        "ngram": "års",
+        "log_odds": 9.891925400023755,
+        "count_in_class": 171,
+        "count_outside": 0
+      },
+      {
+        "ngram": "huv",
+        "log_odds": 9.780768521789247,
+        "count_in_class": 153,
+        "count_outside": 0
+      },
+      {
+        "ngram": "uvu",
+        "log_odds": 9.780768521789247,
+        "count_in_class": 153,
+        "count_outside": 0
+      },
+      {
+        "ngram": " då",
+        "log_odds": 9.404589497008514,
+        "count_in_class": 105,
+        "count_outside": 0
+      },
+      {
+        "ngram": "då ",
+        "log_odds": 9.385376610148523,
+        "count_in_class": 103,
+        "count_outside": 0
+      },
+      {
+        "ngram": "v l",
+        "log_odds": 9.355846905446782,
+        "count_in_class": 100,
+        "count_outside": 0
+      },
+      {
+        "ngram": "å m",
+        "log_odds": 9.335664585696925,
+        "count_in_class": 98,
+        "count_outside": 0
+      },
+      {
+        "ngram": "åde",
+        "log_odds": 9.335664585696925,
+        "count_in_class": 98,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ång",
+        "log_odds": 9.315066535101854,
+        "count_in_class": 96,
+        "count_outside": 0
+      },
+      {
+        "ngram": "råd",
+        "log_odds": 9.294035265716941,
+        "count_in_class": 94,
+        "count_outside": 0
+      },
+      {
+        "ngram": "går",
+        "log_odds": 9.27255216238687,
+        "count_in_class": 92,
+        "count_outside": 0
+      },
+      {
+        "ngram": ". å",
+        "log_odds": 9.2505973837399,
+        "count_in_class": 90,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ngå",
+        "log_odds": 9.193504254704937,
+        "count_in_class": 85,
+        "count_outside": 0
+      }
+    ],
+    "tr": [
+      {
+        "ngram": "ınd",
+        "log_odds": 10.982061443636352,
+        "count_in_class": 619,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ası",
+        "log_odds": 10.678696818448865,
+        "count_in_class": 457,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ını",
+        "log_odds": 10.480987290199007,
+        "count_in_class": 375,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ır.",
+        "log_odds": 10.36822362785443,
+        "count_in_class": 335,
+        "count_outside": 0
+      },
+      {
+        "ngram": "adı",
+        "log_odds": 10.350156289060461,
+        "count_in_class": 329,
+        "count_outside": 0
+      },
+      {
+        "ngram": "rın",
+        "log_odds": 10.287459482249236,
+        "count_in_class": 309,
+        "count_outside": 0
+      },
+      {
+        "ngram": "nın",
+        "log_odds": 10.264552721503792,
+        "count_in_class": 302,
+        "count_outside": 0
+      },
+      {
+        "ngram": "sın",
+        "log_odds": 10.244491868218711,
+        "count_in_class": 296,
+        "count_outside": 0
+      },
+      {
+        "ngram": "nı ",
+        "log_odds": 10.244491868218711,
+        "count_in_class": 296,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ayı",
+        "log_odds": 10.0716490553793,
+        "count_in_class": 249,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ığı",
+        "log_odds": 10.030676507575444,
+        "count_in_class": 239,
+        "count_outside": 0
+      },
+      {
+        "ngram": " iç",
+        "log_odds": 9.956922364011549,
+        "count_in_class": 222,
+        "count_outside": 0
+      },
+      {
+        "ngram": "rı ",
+        "log_odds": 9.929535896624007,
+        "count_in_class": 216,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ıla",
+        "log_odds": 9.891813366510755,
+        "count_in_class": 208,
+        "count_outside": 0
+      },
+      {
+        "ngram": "baş",
+        "log_odds": 9.862557257520741,
+        "count_in_class": 202,
+        "count_outside": 0
+      },
+      {
+        "ngram": "şti",
+        "log_odds": 9.827306880740231,
+        "count_in_class": 195,
+        "count_outside": 0
+      },
+      {
+        "ngram": "lı ",
+        "log_odds": 9.817002822545634,
+        "count_in_class": 193,
+        "count_outside": 0
+      },
+      {
+        "ngram": "mış",
+        "log_odds": 9.796070608775578,
+        "count_in_class": 189,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ına",
+        "log_odds": 9.780078796759371,
+        "count_in_class": 186,
+        "count_outside": 0
+      },
+      {
+        "ngram": "ştı",
+        "log_odds": 9.76382708479163,
+        "count_in_class": 183,
+        "count_outside": 0
+      }
+    ],
+    "zh": [
+      {
+        "ngram": "斯大林",
+        "log_odds": 9.681539118412411,
+        "count_in_class": 108,
+        "count_outside": 0
+      },
+      {
+        "ngram": "。19",
+        "log_odds": 9.604652080088423,
+        "count_in_class": 100,
+        "count_outside": 0
+      },
+      {
+        "ngram": "肯尼迪",
+        "log_odds": 9.060648057625114,
+        "count_in_class": 58,
+        "count_outside": 0
+      },
+      {
+        "ngram": "12月",
+        "log_odds": 8.970659322015141,
+        "count_in_class": 53,
+        "count_outside": 0
+      },
+      {
+        "ngram": "在20",
+        "log_odds": 8.932266890976907,
+        "count_in_class": 51,
+        "count_outside": 0
+      },
+      {
+        "ngram": "。20",
+        "log_odds": 8.807364640275882,
+        "count_in_class": 45,
+        "count_outside": 0
+      },
+      {
+        "ngram": "物理學",
+        "log_odds": 8.78494217622005,
+        "count_in_class": 44,
+        "count_outside": 0
+      },
+      {
+        "ngram": "委员会",
+        "log_odds": 8.738530134455583,
+        "count_in_class": 42,
+        "count_outside": 0
+      },
+      {
+        "ngram": "阿米尔",
+        "log_odds": 8.738530134455583,
+        "count_in_class": 42,
+        "count_outside": 0
+      },
+      {
+        "ngram": "11月",
+        "log_odds": 8.714490515269437,
+        "count_in_class": 41,
+        "count_outside": 0
+      },
+      {
+        "ngram": "达尔文",
+        "log_odds": 8.689858728079772,
+        "count_in_class": 40,
+        "count_outside": 0
+      },
+      {
+        "ngram": "在19",
+        "log_odds": 8.664604860758569,
+        "count_in_class": 39,
+        "count_outside": 0
+      },
+      {
+        "ngram": "解放军",
+        "log_odds": 8.664604860758569,
+        "count_in_class": 39,
+        "count_outside": 0
+      },
+      {
+        "ngram": "10月",
+        "log_odds": 8.638696675899904,
+        "count_in_class": 38,
+        "count_outside": 0
+      },
+      {
+        "ngram": "賴清德",
+        "log_odds": 8.584775259106083,
+        "count_in_class": 36,
+        "count_outside": 0
+      },
+      {
+        "ngram": "国人民",
+        "log_odds": 8.556683524239068,
+        "count_in_class": 35,
+        "count_outside": 0
+      },
+      {
+        "ngram": "1日，",
+        "log_odds": 8.52777977805672,
+        "count_in_class": 34,
+        "count_outside": 0
+      },
+      {
+        "ngram": "邓斯特",
+        "log_odds": 8.498015676150265,
+        "count_in_class": 33,
+        "count_outside": 0
+      },
+      {
+        "ngram": "12年",
+        "log_odds": 8.498015676150265,
+        "count_in_class": 33,
+        "count_outside": 0
+      },
+      {
+        "ngram": "，19",
+        "log_odds": 8.467338423903218,
+        "count_in_class": 32,
+        "count_outside": 0
+      }
+    ]
+  }
+}

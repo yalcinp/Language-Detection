@@ -1,35 +1,15 @@
 from __future__ import annotations
-
 import json
 from pathlib import Path
 from typing import List, Tuple, Dict
-
-from own_char_ngram_nb import CharNgramNB
+from own_char_ngram_nb import CharNgramNB, load_train
 from evaluate import evaluate
 
 LABELS = ["en","de","fr","es","it","tr","nl","sv","pl","ru","ar","zh"]
 LS = [None, 20, 30]  # None = full
 
 
-def load_train(path: Path) -> List[Tuple[str, str]]:
-    data = []
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            obj = json.loads(line)
-            data.append((obj["text"], obj["lang"]))
-    return data
-
-
-def norm_keep(s: str) -> str:
-    # consistent normalization for both settings
-    return " ".join(s.lower().split())
-
-
-def norm_drop(s: str) -> str:
-    return norm_keep(s).replace(" ", "")
-
-
-def maybe_trunc(s: str, L: int | None) -> str:
+def truncate(s: str, L: int | None) -> str:
     return s if L is None else s[:L]
 
 
@@ -41,14 +21,16 @@ if __name__ == "__main__":
 
     train_data = load_train(train_path)
 
-    # Train keep-spaces model (on normalized text)
-    train_keep = [(norm_keep(t), y) for (t, y) in train_data]
+    # Initialize two models with the same config
     m_keep = CharNgramNB(n_min=1, n_max=5, alpha=0.1)
+    m_drop = CharNgramNB(n_min=1, n_max=5, alpha=0.1)
+
+    # Train keep-spaces model (on normalized text)
+    train_keep = [(m_keep.normalize(t), y) for (t, y) in train_data]
     m_keep.fit(train_keep)
 
-    # Train drop-spaces model (normalized + spaces removed)
-    train_drop = [(norm_drop(t), y) for (t, y) in train_data]
-    m_drop = CharNgramNB(n_min=1, n_max=5, alpha=0.1)
+    # Train drop-spaces model (normalized and spaces removed)
+    train_drop = [(m_drop.normalize(t), y) for (t, y) in train_data]
     m_drop.fit(train_drop)
 
     rows: List[Dict] = []
@@ -57,10 +39,10 @@ if __name__ == "__main__":
         tag = "full" if L is None else f"L{L}"
 
         def predict_keep(texts, _L=L):
-            return [m_keep.predict_one(maybe_trunc(norm_keep(t), _L)) for t in texts]
+            return [m_keep.predict_one(truncate(m_keep.normalize(t), _L)) for t in texts]
 
         def predict_drop(texts, _L=L):
-            return [m_drop.predict_one(maybe_trunc(norm_drop(t), _L)) for t in texts]
+            return [m_drop.predict_one(truncate(m_drop.normalize(t), _L)) for t in texts]
 
         res_keep = evaluate(
             predictor=predict_keep,
