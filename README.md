@@ -54,6 +54,13 @@ It is recommended to use a virtual environment.
 git clone https://github.com/yalcinp/Language-Detection.git
 cd Language-Detection
 pip install -r requirements.txt
+```
+
+---
+## Reproducing All Experiments
+
+All experiments and analyses can be reproduced with a single command: 
+bash run.sh
 
 ## Implemented analyses:
 
