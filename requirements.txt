@@ -1,0 +1,5 @@
+numpy
+scikit-learn
+fasttext
+py3langid
+matplotlib
